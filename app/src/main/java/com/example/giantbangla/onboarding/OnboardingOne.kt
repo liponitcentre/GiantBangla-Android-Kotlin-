@@ -110,7 +110,7 @@ fun OnboardingOne(
                     )
                 }
                 Button(
-                    onClick = {}, modifier = Modifier
+                    onClick = onTimeout, modifier = Modifier
                         .width(210.dp), shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = colorResource(R.color.green))
                 ) {

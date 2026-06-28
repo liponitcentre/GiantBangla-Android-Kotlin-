@@ -21,26 +21,8 @@ object AuthRoutes {
 
 @Composable
 fun AuthNavGraph(navController: NavHostController = rememberNavController()) {
-    NavHost(navController = navController, startDestination = AuthRoutes.Splash) {
-
-        composable(AuthRoutes.OnboardingOne) {
-            OnboardingOne(
-                onTimeout = {
-                    navController.navigate(AuthRoutes.OnboardingOne) {
-                        popUpTo(AuthRoutes.OnboardingOne) { inclusive = true }
-                    }
-                },
-            )
-        }
-        composable(AuthRoutes.OnboardingTwo) {
-            OnboardingTwo(
-                onTimeout = {
-                    navController.navigate(AuthRoutes.OnboardingTwo) {
-                        popUpTo(AuthRoutes.OnboardingTwo) { inclusive = true }
-                    }
-                },
-            )
-        }
+    // First screen of the app:
+    NavHost(navController = navController, startDestination = AuthRoutes.OnboardingOne) {
         composable(AuthRoutes.Splash) {
             SplashScreen(
                 onTimeout = {
@@ -50,6 +32,29 @@ fun AuthNavGraph(navController: NavHostController = rememberNavController()) {
                 },
             )
         }
+        composable(AuthRoutes.OnboardingOne) {
+            // onNext = advance to the second onboarding screen.
+            OnboardingOne(
+                onTimeout = {
+                    navController.navigate(AuthRoutes.OnboardingTwo) {
+                        popUpTo(AuthRoutes.OnboardingOne) { inclusive = true }
+                    }
+                },
+            )
+        }
+
+        composable(AuthRoutes.OnboardingTwo) {
+            // onNext = finish onboarding, go to Splash and clear onboarding from back stack.
+            OnboardingTwo(
+                onTimeout = {
+                    navController.navigate(AuthRoutes.PhoneSignUp) {
+                        popUpTo(AuthRoutes.OnboardingTwo) { inclusive = true }
+                    }
+                },
+            )
+        }
+
+
 
         composable(AuthRoutes.PhoneSignUp) {
             PhoneSignUpScreen(
