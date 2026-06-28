@@ -30,9 +30,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.giantbangla.R
 
-@Preview(showSystemUi = true)
+
 @Composable
-fun OnboardingTwo() {
+fun OnboardingTwo(
+    onTimeout: () -> Unit,
+    modifier: Modifier = Modifier,
+    timeoutMillis: Long = 1800L,
+) {
     Box(
         modifier = Modifier
             .fillMaxHeight()
