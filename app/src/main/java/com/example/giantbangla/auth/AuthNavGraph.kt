@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.giantbangla.home.HomeScreen
 import com.example.giantbangla.onboarding.OnboardingOne
 import com.example.giantbangla.onboarding.OnboardingTwo
 

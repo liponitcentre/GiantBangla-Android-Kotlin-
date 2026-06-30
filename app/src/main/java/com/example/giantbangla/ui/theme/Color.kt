@@ -17,6 +17,7 @@ val OtpBorder   = Color(0xFFDADADA)
 val DividerColor     = Color(0xFFE7E7E7)
 
 // ---- Text ----
+val Strike      = Color(0xFFB0B0B0)
 val TextPrimary   = Color(0xFF1A1A1A)
 val TextSecondary = Color(0xFF7A7A7A)
 val TextHint      = Color(0xFFB0B0B0)
